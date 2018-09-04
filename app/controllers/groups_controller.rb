@@ -20,8 +20,8 @@ before_action :authenticate_user! , only: [:new, :create, :edit, :update, :destr
 
 
      if @group.save
-       +     current_user.join!(@group)
-
+       # 创建群后，自动加入群
+      current_user.join!(@group)
        redirect_to groups_path
      else
        render :new
