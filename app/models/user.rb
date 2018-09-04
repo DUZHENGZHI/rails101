@@ -16,7 +16,7 @@ class User < ApplicationRecord
     participated_groups.include?(group)
    end
 
-# 加入群组
+# 加入群组 感叹号是方法的一部分
  def join!(group)
    participated_groups << group
  end
