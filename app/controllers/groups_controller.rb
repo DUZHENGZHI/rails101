@@ -47,6 +47,7 @@ before_action :authenticate_user! , only: [:new, :create, :edit, :update, :destr
   end
 
   def destroy
+    
     @group.destroy
     redirect_to groups_path, alert: "Group deleted"
   end
