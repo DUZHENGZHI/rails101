@@ -11,6 +11,14 @@
 
   <p><%= @group.description %></p>
 
+  <span class="pull-right">
+  <% if current_user && current_user.is_member_of?(@group) %>
+    <label class="label label-success"> 群组成员 </label>
+  <% else %>
+    <label class="label label-warning"> 不是群组成员 </label>
+  <% end %>
+</span>
+
   <table class="table">
       <thead>
        <tr>
@@ -31,7 +39,7 @@
 
       </tbody>
     </table>
-    
+
     <div class="text-center">
       <%= will_paginate @posts %>
     </div>
